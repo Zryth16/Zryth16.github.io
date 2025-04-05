@@ -129,7 +129,7 @@ header {
     color: #28a745;
 }
 
-.services .service-item {
+.service-item {
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
@@ -137,18 +137,43 @@ header {
     transition: all 0.3s ease;
 }
 
-.services .service-item:hover {
+.service-item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.services .service-item i {
+.service-item i {
     font-size: 40px;
     color: #28a745;
     margin-bottom: 20px;
 }
 
-.services .service-item h3 {
-    color: #28a745;
+.contact {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+/* Specific styles for contact page */
+.contact-header {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.contact-header img {
+    max-width: 100%; /* Ensure the logo is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.map-section {
+    padding: 40px 0;
+    background-color: #f8f9fa; /* Light background for contrast */
+    text-align: center; /* Center the heading */
+}
+
+.map-section h2 {
+    margin-bottom: 20px;
+    color: #28a745; /* Change this color as needed */
 }
 
 /* About Section */
@@ -166,28 +191,26 @@ header {
     border-radius: 5px;
 }
 
-/* Testimonials Section */
-.testimonials {
+/* Image Grid Section */
+.image-slider {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.image-slider h2 {
+    margin-bottom: 40px;
     text-align: center;
+    color: #28a745; /* Change this color as needed */
 }
 
-.testimonials h2 {
-    color: #28a745;
-    margin-bottom: 50px;
+.slider-item {
+    text-align: center; /* Center images in the slider */
 }
 
-.testimonials .testimonial {
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.testimonials .testimonial .author {
-    font-style: italic;
-    color: #777;
+.slider-item img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
 }
 
 /* Footer */
