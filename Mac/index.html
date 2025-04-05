@@ -169,32 +169,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-        // Get the video element
-        const heroVideo = document.querySelector('.hero-video');
-      
-        // Function to fade out the video
-        function fadeOutVideo() {
-          heroVideo.style.opacity = 1; // Ensure video starts with full opacity
-      
-          // Fade out over 3 seconds (3000 milliseconds)
-          heroVideo.animate(
-            [
-              { opacity: 1 },
-              { opacity: 0 },
-            ],
-            {
-              duration: 3000, // Adjust the duration (in ms) for faster/slower fade
-              easing: 'ease-out', // Use an easing function for a smooth transition
-              fill: 'forwards', // Keep the final opacity value after animation
-            }
-          );
-        }
-      
-        // Event listener for when the video ends
-        heroVideo.addEventListener('ended', fadeOutVideo);
-      </script>      
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
     <script src="script.js"></script>
 </body>
 
