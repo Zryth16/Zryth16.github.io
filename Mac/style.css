@@ -72,8 +72,8 @@ header {
     background: url('images/c1.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 150px 0;
     position: relative;
+    height: 85vh;
 }
 
 .hero::before {
@@ -87,8 +87,11 @@ header {
 }
 
 .hero .hero-content {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    top: 50%; /* Vertical center */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center itself */
+    /* ... other styles ... */
 }
 
 .hero h1 {
