@@ -7,11 +7,11 @@ body {
 }
 
 header {
-    position: absolute; /* Position relative to the viewport */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Ensure the header is above the hero content */
+    z-index: 2;
 }
 
 /* Top Bar */
@@ -48,9 +48,9 @@ header {
 
 /* Navbar */
 .navbar {
-    background-color: transparent !important; /* Remove any background color */
+    background-color: transparent !important;
     padding: 20px 0;
-    box-shadow: none; /* Remove box shadow */
+    box-shadow: none;
 }
 
 .navbar-brand img {
@@ -58,9 +58,10 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white; /* Or a color that contrasts well with your hero image */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* Add a text shadow for better visibility */
 }
-
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
@@ -69,53 +70,124 @@ header {
 
 /* Hero Section */
 .hero {
-    background: url('images/c1.jpg') center/cover no-repeat;
-    color: white;
-    text-align: center;
     position: relative;
-    height: 85vh;
-    
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* ... other styles ... */
-
-.hero-video {
+.slider {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1; /* Ensure it's behind the content */
-}    
+    object-position: center;
+}
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+/* Media query for specific resolution */
+@media (width: 1206px) and (height: 2622px) {
+    .hero {
+        height: 100vh; /* Use full viewport height */
+    }
+
+    .slider img {
+        object-fit: cover; /* Make sure the image covers the area */
+    }
+}
+
+/* Media query */
+@media (min-width: 2000px) {
+    .slider img {
+        /* Adjust properties as needed for high-resolution screens */
+        object-fit: cover;
+    }
 }
 
 .hero .hero-content {
     position: absolute;
-    top: 50%; /* Vertical center */
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center itself */
-    z-index: 2; /* Place content above the video */
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Place the content above the slider */
+    color: white;
+    /* Ensure text is visible */
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    /* Improve text visibility */
 }
 
 .hero p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    /* Improve text visibility */
 }
+
+/* Style the dots */
+.slick-dots {
+    position: absolute;
+    bottom: 20px;
+    /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    /* Ensure dots are above the slider */
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent background */
+    border-radius: 50%;
+    /* Make them round */
+}
+
+.slick-dots li button:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    content: '';
+    /* Remove default content */
+    text-align: center;
+    color: black;
+    opacity: 1;
+}
+
+.slick-dots li.slick-active button {
+    background: white;
+    /* Solid white for active dot */
+}
+
 
 /* Services Section */
 .services {
@@ -155,25 +227,25 @@ header {
 /* Specific styles for contact page */
 .contact-header {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-bottom: 20px; /* Space below the header */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .contact-header img {
-    max-width: 100%; /* Ensure the logo is responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 .map-section {
     padding: 40px 0;
-    background-color: #f8f9fa; /* Light background for contrast */
-    text-align: center; /* Center the heading */
+    background-color: #f8f9fa;
+    text-align: center;
 }
 
 .map-section h2 {
     margin-bottom: 20px;
-    color: #28a745; /* Change this color as needed */
+    color: #28a745;
 }
 
 /* About Section */
@@ -194,23 +266,23 @@ header {
 /* Image Grid Section */
 .image-slider {
     padding: 80px 0;
-    background-color: #f8f9fa; /* Light background for contrast */
+    background-color: #f8f9fa;
 }
 
 .image-slider h2 {
     margin-bottom: 40px;
     text-align: center;
-    color: #28a745; /* Change this color as needed */
+    color: #28a745;
 }
 
 .slider-item {
-    text-align: center; /* Center images in the slider */
+    text-align: center;
 }
 
 .slider-item img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* Footer */
@@ -258,4 +330,31 @@ footer .text-center {
 .btn-primary:hover {
     background-color: #1e7e34;
     border-color: #1e7e34;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.scroll-down-link {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-down-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.scroll-down-link i {
+    font-size: 24px;
 }
