@@ -69,35 +69,30 @@ header {
 }
 
 .hero {
-    position: relative; /* Add this line */
+    position: relative;
+    height: 100vh;
+    background: url('images/tru1.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the area */
-    object-position: center; /* Center the image within its container */
-    display: block; /* Remove any potential bottom spacing */
+/* Media query for portrait orientation */
+@media (orientation: portrait) {
+    .hero {
+        height: 60vh; /* Adjust this value as needed */
+    }
 }
 
 .hero .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* This ensures the content is above the slider */
+    z-index: 2;
     color: white;
     text-align: center;
 }
+
 
 .hero h1 {
     font-size: 3em;
