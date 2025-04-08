@@ -71,7 +71,7 @@ header {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('images/tru1.jpg') center/cover no-repeat;
+    background: url('images/cover1.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
