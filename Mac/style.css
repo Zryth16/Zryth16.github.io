@@ -68,11 +68,8 @@ header {
     color: #28a745;
 }
 
-/* Hero Section */
 .hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+    position: relative; /* Add this line */
 }
 
 .slider {
@@ -87,27 +84,9 @@ header {
 .slider img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Media query for specific resolution */
-@media (width: 1206px) and (height: 2622px) {
-    .hero {
-        height: 100vh; /* Use full viewport height */
-    }
-
-    .slider img {
-        object-fit: cover; /* Make sure the image covers the area */
-    }
-}
-
-/* Media query */
-@media (min-width: 2000px) {
-    .slider img {
-        /* Adjust properties as needed for high-resolution screens */
-        object-fit: cover;
-    }
+    object-fit: cover; /* Ensure the image covers the area */
+    object-position: center; /* Center the image within its container */
+    display: block; /* Remove any potential bottom spacing */
 }
 
 .hero .hero-content {
@@ -115,10 +94,8 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
-    /* Place the content above the slider */
+    z-index: 2; /* This ensures the content is above the slider */
     color: white;
-    /* Ensure text is visible */
     text-align: center;
 }
 
