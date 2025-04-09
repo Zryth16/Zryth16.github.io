@@ -48,24 +48,82 @@ header {
 
 /* Navbar */
 .navbar {
-    background-color: transparent !important;
+    background-color: #222 !important;
     padding: 20px 0;
-    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 24px;
 }
 
 .navbar-brand img {
-    max-height: 50px;
+    max-height: 40px; /* Adjust this value as needed */
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    /* Add a text shadow for better visibility */
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 0.25rem 0.5rem !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: #28a745;
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar-nav .nav-item::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-item:hover::after {
+    width: 70%;
+    background: #fff;
+}
+
+.navbar.scrolled {
+    background-color: #fff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.navbar.scrolled .navbar-brand {
+    color: #333 !important;
+}
+
+.navbar.scrolled .navbar-nav .nav-link {
+    color: #333 !important;
+}
+
+.navbar.scrolled .navbar-toggler {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    color: #333 !important;
 }
 
 .hero {
@@ -83,12 +141,12 @@ header {
 /* Media query for portrait orientation */
 @media (orientation: portrait) {
     .hero {
-        height: 60vh; /* Adjust this value as needed */
+        height: 100vh; /* Adjust this value as needed */
     }
 }
 
 .hero .hero-content {
-    z-index: 2;
+    z-index: 1;
     color: white;
     text-align: center;
 }
@@ -196,6 +254,25 @@ header {
     background-color: #f8f9fa;
 }
 
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    .contact {
+        padding-top: 25vh; /* Adjust this value to increase or decrease spacing */
+    }
+}
+
+.contact h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.contact h3 {
+    margin-top: 20px; /* Spacing above the contact information */
+    color: #28a745;
+}
+
+.contact .map-container {
+    margin-top: 20px; /* Spacing above the map */
+}
 /* Specific styles for contact page */
 .contact-header {
     display: flex;
@@ -218,6 +295,19 @@ header {
 .map-section h2 {
     margin-bottom: 20px;
     color: #28a745;
+}
+.contact-heading {
+    font-size: 2.5em; /* Adjust the size as needed */
+    color: #28a745; /* Use your theme color */
+    font-weight: bold; /* Make it bold */
+    text-transform: capitalize; /* Ensure it's capitalized */
+    margin-bottom: 30px; /* Add some spacing below */
+    text-align: left; /* Align the text left */
+}
+
+.contact a i.fas.fa-phone,
+.contact a i.fas.fa-envelope {
+    font-size: 30px; /* Adjust the size as needed */
 }
 
 /* About Section */
@@ -291,6 +381,13 @@ footer hr {
 
 footer .text-center {
     color: #ccc;
+}
+
+footer .col-md-4 a i.fas.fa-phone,
+footer .col-md-4 a i.fas.fa-envelope {
+    font-size: 20px; 
+    margin-right: 10px; 
+    color: white;
 }
 
 /* General Styles */
