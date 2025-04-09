@@ -47,83 +47,49 @@ header {
 }
 
 /* Navbar */
+/* Modern Navbar Styling */
 .navbar {
-    background-color: #222 !important;
-    padding: 20px 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar-brand {
-    color: #fff !important;
-    font-size: 24px;
+    background: linear-gradient(90deg, #343a40, #495057); /* Sleek gradient background */
+    border-bottom: 2px solid #212529; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
 }
 
 .navbar-brand img {
-    max-height: 40px; /* Adjust this value as needed */
-}
-
-.navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border: none !important;
-    color: #fff !important;
-    padding: 0.25rem 0.5rem !important;
-}
-
-.navbar-toggler:focus {
-    outline: none !important;
-    box-shadow: none !important;
+    max-height: 50px; /* Adjust logo size */
 }
 
 .navbar-nav .nav-link {
-    color: #fff !important;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    color: #f8f9fa; /* Light text for links */
+    font-weight: 500; /* Medium weight for modern look */
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #adb5bd; /* Subtle hover effect */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-.navbar-nav .nav-item {
-    position: relative;
+.navbar-toggler {
+    border-color: #f8f9fa; /* Light border for the toggle button */
 }
 
-.navbar-nav .nav-item::after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28248, 249, 250, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.navbar-nav .nav-item:hover::after {
-    width: 70%;
-    background: #fff;
+.contact-details .nav-link {
+    font-size: 0.9rem;
+    color: #f8f9fa; /* Light text for contact details */
 }
 
-.navbar.scrolled {
-    background-color: #fff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+.contact-details .nav-link i {
+    margin-right: 5px;
+    color: #adb5bd; /* Subtle icon color */
 }
 
-.navbar.scrolled .navbar-brand {
-    color: #333 !important;
-}
-
-.navbar.scrolled .navbar-nav .nav-link {
-    color: #333 !important;
-}
-
-.navbar.scrolled .navbar-toggler {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-    color: #333 !important;
+.contact-details .nav-link:hover {
+    color: #adb5bd; /* Match hover effect with nav links */
 }
 
 .hero {
@@ -247,6 +213,24 @@ header {
     font-size: 40px;
     color: #28a745;
     margin-bottom: 20px;
+}
+
+.service-tile {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-tile img {
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .contact {
